@@ -3,23 +3,81 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>もしも検証ラボ</title>
+<title>moshimo-upload | もしも検証ラボ</title>
 <style>
-  body { font-family: sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; line-height: 1.8; color: #222; background: #fff; }
-  h1 { font-size: 1.6em; }
-  h2 { font-size: 1.2em; margin-top: 2em; }
+  body { font-family: "Segoe UI", "Meiryo", sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 16px 60px; line-height: 1.8; color: #222; background: #fff; }
+  header { border-bottom: 1px solid #ddd; padding-bottom: 12px; margin-bottom: 24px; }
+  nav a { margin-right: 18px; font-weight: bold; }
+  h1 { font-size: 1.7em; margin: 8px 0; }
+  h2 { font-size: 1.3em; margin-top: 2.2em; border-left: 5px solid #c00; padding-left: 10px; }
+  h3 { font-size: 1.05em; margin-top: 1.6em; }
+  .yt { display: inline-flex; align-items: center; gap: 8px; border: 1px solid #ccc; border-radius: 8px; padding: 6px 12px; font-weight: bold; }
+  .yt svg { width: 34px; height: 24px; }
+  a { color: #065fd4; }
+  .ja { color: #444; }
+  footer { margin-top: 48px; border-top: 1px solid #ddd; padding-top: 12px; font-size: .9em; color: #555; }
 </style>
 </head>
 <body>
-<h1>もしも検証ラボ</h1>
-<p>YouTubeチャンネル「もしも検証ラボ」の運営者が、自分のチャンネルに自分で作った動画をアップロードするためのツールです。</p>
+<header>
+  <nav><a href="#about">About</a><a href="#privacy">Privacy Policy / プライバシーポリシー</a><a href="#contact">Contact</a></nav>
+</header>
 
-<h2>プライバシーポリシー</h2>
-<ul>
-  <li>このツールは、運営者本人のYouTubeアカウントにだけ接続し、動画のアップロードとチャンネル名の確認だけに使います。</li>
-  <li>取得した情報を第三者に提供・販売することはありません。</li>
-  <li>認証情報は運営者のパソコン内にだけ保存し、外部には送りません。</li>
-  <li>アクセスの取り消しは、Googleアカウントの「サードパーティ製のアプリとサービス」からいつでも行えます。</li>
-</ul>
+<section id="about">
+  <h1>moshimo-upload</h1>
+  <p><span class="yt"><svg viewBox="0 0 68 48" aria-hidden="true"><path d="M66.5 7.7A8.5 8.5 0 0 0 60.5 1.7C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4A8.5 8.5 0 0 0 1.5 7.7C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6c5.3 1.4 26.5 1.4 26.5 1.4s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#f00"/><path d="M45 24 27 14v20z" fill="#fff"/></svg>Developed with YouTube</span></p>
+  <p>moshimo-upload is a personal tool used only by the owner of the YouTube channel
+    <a href="https://www.youtube.com/@moshimo_zundalabo">「もしも検証ラボ」(@moshimo_zundalabo)</a>.
+    It uses the <strong>YouTube API Services</strong> to upload videos that the owner created to the owner's own channel once a day, and to set their title, description, tags and thumbnail.
+    It is not offered to any other users.</p>
+  <p class="ja">YouTubeチャンネル「もしも検証ラボ」の運営者が、自分で作った動画を自分のチャンネルにアップロードするための個人用ツールです。YouTube API サービスを利用しています。他の人には提供していません。</p>
+</section>
+
+<section id="privacy">
+  <h2>Privacy Policy / プライバシーポリシー</h2>
+  <p>Last updated: 2026-11-10</p>
+
+  <h3>1. Use of YouTube API Services</h3>
+  <p>This tool uses YouTube API Services. By using this tool, you agree to be bound by the
+    <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>.
+    Google's handling of data is described in the
+    <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+  <p class="ja">本ツールは YouTube API サービスを利用しています。利用者は <a href="https://www.youtube.com/t/terms">YouTube 利用規約</a> に従うものとします。Google によるデータの取り扱いは <a href="https://policies.google.com/privacy">Google プライバシーポリシー</a> をご覧ください。</p>
+
+  <h3>2. Information accessed</h3>
+  <ul>
+    <li>Basic information of the authorized channel (channel name, uploads playlist).</li>
+    <li>List and status (public / private) of videos uploaded to that channel, to avoid duplicate uploads.</li>
+    <li>OAuth access / refresh tokens issued by Google.</li>
+  </ul>
+  <p class="ja">許可されたチャンネルの基本情報、アップロード済み動画の一覧と公開状態(二重投稿の防止のため)、Googleが発行する認証トークンを扱います。</p>
+
+  <h3>3. How information is used, stored and shared</h3>
+  <ul>
+    <li>Information is used only to upload the owner's videos and check their status.</li>
+    <li>OAuth tokens and logs are stored only on the owner's local PC. Nothing is sent to any server other than Google's APIs.</li>
+    <li>No information is sold or shared with third parties. No cookies or tracking are used by this tool or this website.</li>
+  </ul>
+  <p class="ja">情報は動画のアップロードと状態確認のためだけに使います。認証トークンと記録は運営者のパソコン内にだけ保存し、Google の API 以外には送りません。第三者への提供・販売はしません。本ツールと本サイトは Cookie やトラッキングを使いません。</p>
+
+  <h3>4. Revoking access and deleting data</h3>
+  <ul>
+    <li>Access can be revoked at any time from the
+      <a href="https://security.google.com/settings/security/permissions">Google security settings page</a>.</li>
+    <li>When access is revoked, the stored token is deleted from the local PC. Stored API data (video list cache) is refreshed or deleted within 30 days.</li>
+    <li>You may also request deletion by contacting us (see below); we will delete it within 7 days.</li>
+  </ul>
+  <p class="ja">アクセスは <a href="https://security.google.com/settings/security/permissions">Google のセキュリティ設定ページ</a> からいつでも取り消せます。取り消した場合、保存しているトークンはパソコンから削除し、APIから得たデータは30日以内に更新または削除します。下記の連絡先から削除を依頼することもでき、7日以内に削除します。</p>
+</section>
+
+<section id="contact">
+  <h2>Contact / お問い合わせ</h2>
+  <p>Please contact us via the YouTube channel <a href="https://www.youtube.com/@moshimo_zundalabo">「もしも検証ラボ」</a>.</p>
+  <p class="ja">YouTubeチャンネル「もしも検証ラボ」からご連絡ください。</p>
+</section>
+
+<footer>
+  moshimo-upload — <a href="#privacy">Privacy Policy</a> — YouTube is a trademark of Google LLC.
+</footer>
 </body>
 </html>
